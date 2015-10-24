@@ -54,7 +54,13 @@ void MainWindow::on_open_clicked()
 
 void MainWindow::on_process_clicked()
 {
-    labelview->proc();
+    QString path;
+//    qDebug()<<fileName<<endl;
+    int pos = fileName.lastIndexOf('/');
+    path = fileName.left(pos+1);
+//    qDebug()<<path<<endl;
+
+    labelview->proc(path,fealist);
     showImage(index);
 }
 

@@ -19,7 +19,7 @@ class LabelView
 public:
     LabelView();
     void readin(QString fileName);
-    void proc();
+    void proc(QString path,QString *fealist);
     QImage getImg(int index);
 
 private:

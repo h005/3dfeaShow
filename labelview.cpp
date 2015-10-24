@@ -37,7 +37,7 @@ void LabelView::readin(QString fileName)
     fclose(stdin);
 }
 
-void LabelView::proc()
+void LabelView::proc(QString path,QString *fealist)
 {
     for(int i=0;i<NUM;i++)
     {
@@ -49,8 +49,12 @@ void LabelView::proc()
         // colormap
         applyColorMap(images[i], colorImg[i], COLORMAP_JET);
 
-        cvtColor(colorImg[i],colorImg[i],CV_BGR2RGB);
+//        QString path = "E:/ViewPoint/dragon/"+fealist[i]+".jpg";
+        QString path0 = path+fealist[i]+".jpg";
+//        cvSaveImage(path.toStdString().c_str(),&(IplImage(colorImg[i])));
+        imwrite(path0.toStdString().c_str(),colorImg[i]);
 
+        cvtColor(colorImg[i],colorImg[i],CV_BGR2RGB);
     }
 
 }
