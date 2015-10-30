@@ -9,7 +9,7 @@
 #include <QDebug>
 
 #define NUM 12
-#define NUM_PIX 64
+#define NUM_PIX 32
 #define LEN 1024
 
 using namespace cv;
